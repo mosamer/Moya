@@ -2,7 +2,7 @@ import Foundation
 
 /// Network activity change notification type.
 public enum NetworkActivityChangeType {
-    case Began, Ended
+    case Began, Ended, Processing(Int64, Int64, Int64)
 }
 
 /// Provides each request with optional NSURLCredentials.
@@ -25,6 +25,11 @@ public final class NetworkActivityPlugin: Plugin {
     /// Called by the provider as soon as a response arrives
     public func didReceiveResponse(result: Result<Moya.Response, Moya.Error>, target: MoyaTarget) {
         networkActivityClosure(change: .Ended)
+    }
+
+    /// Called by the provider periodically during the lifecycle of the request as data is written to or read from the server
+    public func processingRequest(request: MoyaRequest, target: MoyaTarget, progress: (Int64, Int64, Int64)) {
+        networkActivityClosure(change: .Processing(progress))
     }
 }
 

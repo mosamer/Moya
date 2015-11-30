@@ -10,8 +10,11 @@ public protocol Plugin {
     /// Called immediately before a request is sent over the network (or stubbed).
     func willSendRequest(request: MoyaRequest, target: MoyaTarget)
 
-    // Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
+    /// Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
     func didReceiveResponse(result: Result<Moya.Response, Moya.Error>, target: MoyaTarget)
+
+    /// Called periodically during the lifecycle of the request as data is written to or read from the server.
+    func processingRequest(request: MoyaRequest, target: MoyaTarget, progress: (Int64, Int64, Int64))
 }
 
 /// Request type used by willSendRequest plugin function.

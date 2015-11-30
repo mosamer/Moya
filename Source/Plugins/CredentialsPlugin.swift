@@ -19,6 +19,10 @@ public final class CredentialsPlugin: Plugin {
     }
     
     public func didReceiveResponse(result: Result<Moya.Response, Moya.Error>, target: MoyaTarget) {
+        // do nothing
+    }
 
+    public func processingRequest(request: MoyaRequest, target: MoyaTarget, progress: (Int64, Int64, Int64)) {
+        // do nothing
     }
 }

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "15ADDC96148D8EC7ABACA3AFDED5D958C5D22840",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "15ADDC96148D8EC7ABACA3AFDED5D958C5D22840" : 0,
+    "38847B9143789ADFF4DAFC15E97FB96791AF21CA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6F70CC92-3C87-4CBA-8C44-214E15F0B08F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "15ADDC96148D8EC7ABACA3AFDED5D958C5D22840" : "Moya\/",
+    "38847B9143789ADFF4DAFC15E97FB96791AF21CA" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Demo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demo\/Demo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Moya\/Moya.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "15ADDC96148D8EC7ABACA3AFDED5D958C5D22840"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wangshengjia\/BearBeers.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38847B9143789ADFF4DAFC15E97FB96791AF21CA"
+    }
+  ]
+}

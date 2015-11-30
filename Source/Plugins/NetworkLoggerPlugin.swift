@@ -28,6 +28,10 @@ public final class NetworkLoggerPlugin: Plugin {
             output(items: logNetworkResponse(nil, data: nil, target: target), separator: separator, terminator: terminator)
         }
     }
+
+    public func processingRequest(request: MoyaRequest, target: MoyaTarget, progress: (Int64, Int64, Int64)) {
+        // do nothing
+    }
 }
 
 private extension NetworkLoggerPlugin {

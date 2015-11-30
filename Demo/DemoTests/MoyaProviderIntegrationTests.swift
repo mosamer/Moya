@@ -132,7 +132,7 @@ class MoyaProviderIntegrationTests: QuickSpec {
                     it("notifies at the beginning of network requests") {
                         var called = false
                         let plugin = NetworkActivityPlugin { (change) -> () in
-                            if change == .Began {
+                            if case .Began = change {
                                 called = true
                             }
                         }
@@ -147,7 +147,7 @@ class MoyaProviderIntegrationTests: QuickSpec {
                     it("notifies at the end of network requests") {
                         var called = false
                         let plugin = NetworkActivityPlugin { (change) -> () in
-                            if change == .Ended {
+                            if case .Ended = change {
                                 called = true
                             }
                         }

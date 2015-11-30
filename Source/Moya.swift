@@ -187,8 +187,12 @@ internal extension MoyaProvider {
             // Inform all plugins about the response
             plugins.forEach { $0.didReceiveResponse(result, target: target) }
             completion(result: result)
+        }.progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                plugins.forEach { $0.processingRequest(request, target: target, progress: (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite)) }
+            })
         }
-        
+
         return CancellableToken(request: alamoRequest)
     }
     

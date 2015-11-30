@@ -117,7 +117,7 @@ class MoyaProviderSpec: QuickSpec {
         it("notifies at the beginning of network requests") {
             var called = false
             let plugin = NetworkActivityPlugin { (change) -> () in
-                if change == .Began {
+                if case .Began = change {
                     called = true
                 }
             }
@@ -132,7 +132,7 @@ class MoyaProviderSpec: QuickSpec {
         it("notifies at the end of network requests") {
             var called = false
             let plugin = NetworkActivityPlugin { (change) -> () in
-                if change == .Ended {
+                if case .Ended = change {
                     called = true
                 }
             }
@@ -143,7 +143,22 @@ class MoyaProviderSpec: QuickSpec {
             
             expect(called) == true
         }
-        
+
+//        it("notifies notify when processing the network requests") {
+//            var called = false
+//            let plugin = NetworkActivityPlugin { (change) -> () in
+//                if change == .processing {
+//                    called = true
+//                }
+//            }
+//
+//            let provider = MoyaProvider<GitHub>(stubClosure: MoyaProvider.ImmediatelyStub, plugins: [plugin])
+//            let target: GitHub = .Zen
+//            provider.request(target) { _ in  }
+//
+//            expect(called) == true
+//        }
+
         it("delays execution when appropriate") {
             let provider = MoyaProvider<GitHub>(stubClosure: MoyaProvider.DelayedStub(2))
             
